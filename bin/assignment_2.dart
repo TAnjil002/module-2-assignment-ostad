@@ -6,7 +6,7 @@ void main() {
   print('====================================');
   print('       SMART TEMPERATURE CONVERTER');
   print('====================================');
-
+}
   double celsiusToFahrenheit(double celsius) {
     return (celsius * 9 / 5) + 32;
   }
