@@ -75,8 +75,20 @@ void main() {
         print('$temperature K = $result°F');
         break;
     }
-  }
+    stdout.write(
+        '\nDo you want to perform another conversion? (y/n): ');
 
+    String answer =
+        stdin.readLineSync()?.toLowerCase() ?? 'n';
+
+    if (answer != 'y') {
+      again = false;
+    }
+  }
+  print('\n====================================');
+  print('           Thank You!');
+  print('         Program Ended');
+  print('====================================');
 }
   double celsiusToFahrenheit(double celsius) {
     return (celsius * 9 / 5) + 32;
@@ -100,4 +112,4 @@ void main() {
 
   double kelvinToFahrenheit(double kelvin) {
     return (kelvin - 273.15) * 9 / 5 + 32;
-}
+  }
