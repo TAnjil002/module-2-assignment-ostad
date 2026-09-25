@@ -6,6 +6,60 @@ void main() {
   print('====================================');
   print('       SMART TEMPERATURE CONVERTER');
   print('====================================');
+
+  while (again) {
+    print('\n1. Celsius to Fahrenheit');
+    print('2. Fahrenheit to Celsius');
+    print('3. Celsius to Kelvin');
+    print('4. Kelvin to Celsius');
+    print('5. Fahrenheit to Kelvin');
+    print('6. Kelvin to Fahrenheit');
+    print('7. Exit');
+
+    stdout.write('\nEnter your choice: ');
+    int? choice = int.tryParse(stdin.readLineSync() ?? '');
+
+    if (choice == 7) {
+      break;
+    }
+
+    double temperature = 25;
+
+    double result;
+
+    switch (choice) {
+      case 1:
+        result = celsiusToFahrenheit(temperature);
+        print('$temperature°C = $result°F');
+        break;
+
+      case 2:
+        result = fahrenheitToCelsius(temperature);
+        print('$temperature°F = $result°C');
+        break;
+
+      case 3:
+        result = celsiusToKelvin(temperature);
+        print('$temperature°C = $result K');
+        break;
+
+      case 4:
+        result = kelvinToCelsius(temperature);
+        print('$temperature K = $result°C');
+        break;
+
+      case 5:
+        result = fahrenheitToKelvin(temperature);
+        print('$temperature°F = $result K');
+        break;
+
+      case 6:
+        result = kelvinToFahrenheit(temperature);
+        print('$temperature K = $result°F');
+        break;
+    }
+  }
+
 }
   double celsiusToFahrenheit(double celsius) {
     return (celsius * 9 / 5) + 32;
