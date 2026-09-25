@@ -19,11 +19,28 @@ void main() {
     stdout.write('\nEnter your choice: ');
     int? choice = int.tryParse(stdin.readLineSync() ?? '');
 
+// Check invalid choice
+    if (choice == null || choice < 1 || choice > 7) {
+      print('Invalid choice! Please enter a number between 1 and 7.');
+      continue;
+    }
+
+// Exit
     if (choice == 7) {
       break;
     }
 
-    double temperature = 25;
+// Take temperature input
+    stdout.write('Enter temperature: ');
+
+    double? temperature =
+    double.tryParse(stdin.readLineSync() ?? '');
+
+// Check invalid temperature
+    if (temperature == null) {
+      print('Invalid temperature! Please enter a valid number.');
+      continue;
+    }
 
     double result;
 
